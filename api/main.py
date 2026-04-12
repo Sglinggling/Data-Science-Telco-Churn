@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 
-# Chargement du Pipeline
+# Chargement du pipeline
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, '../models/model.pkl')
 
@@ -30,5 +30,4 @@ def predict():
         return jsonify({'error': str(e)}), 400
 
 if __name__ == '__main__':
-    # Correction cruciale pour Docker : ajout de host='0.0.0.0'
     app.run(host='0.0.0.0', debug=True, port=5000)
