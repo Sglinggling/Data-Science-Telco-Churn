@@ -21,3 +21,23 @@ Le projet est organisé de la manière suivante :
 1. Installer les dépendances :
 ```bash
 pip install -r requirements.txt
+
+Lancer l'API :
+
+Bash
+./.venv/bin/python api/main.py
+Tester l'API (dans un autre terminal) :
+
+Bash
+./.venv/bin/python api/test_api.py
+Utilisation avec Docker
+Docker permet d'éviter les problèmes de versions de bibliothèques entre les machines.
+
+Construire l'image :
+
+Bash
+docker build -t churn-api .
+Lancer le conteneur :
+
+Bash
+docker run -p 5000:5000 churn-api
